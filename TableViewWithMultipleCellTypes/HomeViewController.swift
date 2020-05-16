@@ -11,11 +11,17 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var sortSegment: UISegmentedControl!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func sortSegmentPressed(_ sender: UISegmentedControl) {
+        
+    }
+    
     
 }
 

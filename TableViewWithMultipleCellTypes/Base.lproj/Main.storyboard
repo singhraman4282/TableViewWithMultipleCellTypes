@@ -16,20 +16,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="18e-oa-ix2">
-                                <rect key="frame" x="0.0" y="20" width="414" height="856"/>
+                                <rect key="frame" x="0.0" y="115" width="414" height="761"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ySH-Co-reW">
+                                <rect key="frame" x="20" y="64" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Price"/>
+                                    <segment title="Ratings"/>
+                                    <segment title="Name"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortSegmentPressed:" destination="KmX-TZ-vqy" eventType="valueChanged" id="PeZ-IE-mih"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="18e-oa-ix2" firstAttribute="top" secondItem="23k-1y-9GB" secondAttribute="top" constant="20" symbolic="YES" id="3IQ-NN-yYH"/>
+                            <constraint firstItem="X47-Z2-VUP" firstAttribute="trailing" secondItem="ySH-Co-reW" secondAttribute="trailing" constant="20" id="2or-7K-c2V"/>
                             <constraint firstItem="18e-oa-ix2" firstAttribute="leading" secondItem="X47-Z2-VUP" secondAttribute="leading" id="Akn-V2-pJx"/>
                             <constraint firstItem="18e-oa-ix2" firstAttribute="trailing" secondItem="X47-Z2-VUP" secondAttribute="trailing" id="ESc-dn-kME"/>
+                            <constraint firstItem="18e-oa-ix2" firstAttribute="top" secondItem="ySH-Co-reW" secondAttribute="bottom" constant="20" id="KNn-9j-LpV"/>
+                            <constraint firstItem="ySH-Co-reW" firstAttribute="top" secondItem="X47-Z2-VUP" secondAttribute="top" constant="20" id="gVF-eJ-dhk"/>
+                            <constraint firstItem="ySH-Co-reW" firstAttribute="leading" secondItem="X47-Z2-VUP" secondAttribute="leading" constant="20" id="luS-jd-Sc3"/>
                             <constraint firstAttribute="bottom" secondItem="18e-oa-ix2" secondAttribute="bottom" constant="20" symbolic="YES" id="qWb-so-qOn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X47-Z2-VUP"/>
                     </view>
                     <connections>
+                        <outlet property="sortSegment" destination="ySH-Co-reW" id="33C-4W-6Xu"/>
                         <outlet property="tableView" destination="18e-oa-ix2" id="ILw-tc-deb"/>
                     </connections>
                 </viewController>
