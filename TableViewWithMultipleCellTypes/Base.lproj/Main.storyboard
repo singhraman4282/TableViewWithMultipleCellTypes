@@ -18,6 +18,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="18e-oa-ix2">
                                 <rect key="frame" x="0.0" y="115" width="414" height="761"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="KmX-TZ-vqy" id="4hT-HS-57l"/>
+                                    <outlet property="delegate" destination="KmX-TZ-vqy" id="ft7-xC-wWe"/>
+                                </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ySH-Co-reW">
                                 <rect key="frame" x="20" y="64" width="374" height="32"/>
@@ -25,6 +29,7 @@
                                     <segment title="Price"/>
                                     <segment title="Ratings"/>
                                     <segment title="Name"/>
+                                    <segment title="Type"/>
                                 </segments>
                                 <connections>
                                     <action selector="sortSegmentPressed:" destination="KmX-TZ-vqy" eventType="valueChanged" id="PeZ-IE-mih"/>
@@ -44,7 +49,6 @@
                         <viewLayoutGuide key="safeArea" id="X47-Z2-VUP"/>
                     </view>
                     <connections>
-                        <outlet property="sortSegment" destination="ySH-Co-reW" id="33C-4W-6Xu"/>
                         <outlet property="tableView" destination="18e-oa-ix2" id="ILw-tc-deb"/>
                     </connections>
                 </viewController>

@@ -40,7 +40,7 @@ struct PetStore {
                                   photo: UIImage(named: "pug")),
                               Pet(petType: .dog,
                                   name: "Rollo",
-                                  price: 399.99,
+                                  price: 799.99,
                                   ratings: 4.7,
                                   photo: UIImage(named: "dachshund")),
                               Pet(petType: .cat,
@@ -60,3 +60,46 @@ struct PetStore {
                                   photo: UIImage(named: "kitty1"))
     ]
 }
+
+class PetsByType {
+    let title: String
+    var pets: [Pet]
+    
+    init(type: String, pets: [Pet]) {
+        self.title = type
+        self.pets = pets
+    }
+}
+
+public protocol Stringable {
+    static var asString: String { get }
+}
+
+public extension Stringable {
+    var asString: String {
+        return String(describing: type(of: self))
+    }
+
+    static var asString: String {
+        return String(describing: self)
+    }
+    
+    static var nibName: String {
+        return self.asString
+    }
+    
+    static var reuseId: String {
+        return self.asString
+    }
+    
+    var nibName: String {
+        return self.asString
+    }
+    
+    var reuseId: String {
+        return self.asString
+    }
+}
+
+extension UIViewController: Stringable {}
+extension UITableViewCell: Stringable {}

@@ -14,6 +14,14 @@
 		593D115C2470502C00A82722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593D115A2470502C00A82722 /* LaunchScreen.storyboard */; };
 		593D1166247055BE00A82722 /* PetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D1165247055BE00A82722 /* PetStore.swift */; };
 		593D11682470563100A82722 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D11672470563100A82722 /* HomeViewController.swift */; };
+		593D116C2470585600A82722 /* BirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D116A2470585600A82722 /* BirdCell.swift */; };
+		593D116D2470585600A82722 /* BirdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593D116B2470585600A82722 /* BirdCell.xib */; };
+		593D117124705A7500A82722 /* DogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D116F24705A7500A82722 /* DogCell.swift */; };
+		593D117224705A7500A82722 /* DogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593D117024705A7500A82722 /* DogCell.xib */; };
+		593D11762470608100A82722 /* CatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D11742470608100A82722 /* CatCell.swift */; };
+		593D11772470608100A82722 /* CatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593D11752470608100A82722 /* CatCell.xib */; };
+		593D117A247063DB00A82722 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D1179247063DB00A82722 /* HomeViewModel.swift */; };
+		593D117E2471D3C700A82722 /* PetListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D117D2471D3C700A82722 /* PetListable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		593D115D2470502C00A82722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		593D1165247055BE00A82722 /* PetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStore.swift; sourceTree = "<group>"; };
 		593D11672470563100A82722 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		593D116A2470585600A82722 /* BirdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCell.swift; sourceTree = "<group>"; };
+		593D116B2470585600A82722 /* BirdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirdCell.xib; sourceTree = "<group>"; };
+		593D116F24705A7500A82722 /* DogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCell.swift; sourceTree = "<group>"; };
+		593D117024705A7500A82722 /* DogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogCell.xib; sourceTree = "<group>"; };
+		593D11742470608100A82722 /* CatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCell.swift; sourceTree = "<group>"; };
+		593D11752470608100A82722 /* CatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatCell.xib; sourceTree = "<group>"; };
+		593D1179247063DB00A82722 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		593D117D2471D3C700A82722 /* PetListable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +79,51 @@
 				593D1165247055BE00A82722 /* PetStore.swift */,
 				593D11552470502C00A82722 /* Main.storyboard */,
 				593D11672470563100A82722 /* HomeViewController.swift */,
+				593D1179247063DB00A82722 /* HomeViewModel.swift */,
+				593D11692470583E00A82722 /* TableViewCells */,
 				593D11582470502C00A82722 /* Assets.xcassets */,
 				593D115A2470502C00A82722 /* LaunchScreen.storyboard */,
 				593D115D2470502C00A82722 /* Info.plist */,
 			);
 			path = TableViewWithMultipleCellTypes;
+			sourceTree = "<group>";
+		};
+		593D11692470583E00A82722 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				593D116E24705A4F00A82722 /* BirdCells */,
+				593D11732470605400A82722 /* DogCells */,
+				593D11782470620800A82722 /* CatCells */,
+				593D117D2471D3C700A82722 /* PetListable.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		593D116E24705A4F00A82722 /* BirdCells */ = {
+			isa = PBXGroup;
+			children = (
+				593D116A2470585600A82722 /* BirdCell.swift */,
+				593D116B2470585600A82722 /* BirdCell.xib */,
+			);
+			path = BirdCells;
+			sourceTree = "<group>";
+		};
+		593D11732470605400A82722 /* DogCells */ = {
+			isa = PBXGroup;
+			children = (
+				593D116F24705A7500A82722 /* DogCell.swift */,
+				593D117024705A7500A82722 /* DogCell.xib */,
+			);
+			path = DogCells;
+			sourceTree = "<group>";
+		};
+		593D11782470620800A82722 /* CatCells */ = {
+			isa = PBXGroup;
+			children = (
+				593D11742470608100A82722 /* CatCell.swift */,
+				593D11752470608100A82722 /* CatCell.xib */,
+			);
+			path = CatCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +185,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				593D115C2470502C00A82722 /* LaunchScreen.storyboard in Resources */,
+				593D117224705A7500A82722 /* DogCell.xib in Resources */,
+				593D11772470608100A82722 /* CatCell.xib in Resources */,
 				593D11592470502C00A82722 /* Assets.xcassets in Resources */,
+				593D116D2470585600A82722 /* BirdCell.xib in Resources */,
 				593D11572470502C00A82722 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,9 +200,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				593D11762470608100A82722 /* CatCell.swift in Sources */,
 				593D11502470502C00A82722 /* AppDelegate.swift in Sources */,
 				593D11522470502C00A82722 /* SceneDelegate.swift in Sources */,
+				593D117A247063DB00A82722 /* HomeViewModel.swift in Sources */,
+				593D117124705A7500A82722 /* DogCell.swift in Sources */,
+				593D116C2470585600A82722 /* BirdCell.swift in Sources */,
 				593D1166247055BE00A82722 /* PetStore.swift in Sources */,
+				593D117E2471D3C700A82722 /* PetListable.swift in Sources */,
 				593D11682470563100A82722 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

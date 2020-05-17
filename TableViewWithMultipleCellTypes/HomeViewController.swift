@@ -11,17 +11,24 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet weak var sortSegment: UISegmentedControl!
     
+    
+    private lazy var viewModel: HomeViewModel = {
+        return HomeViewModel()
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: BirdCell.asString, bundle: nil), forCellReuseIdentifier: BirdCell.asString)
+        tableView.register(UINib(nibName: DogCell.asString, bundle: nil), forCellReuseIdentifier: DogCell.asString)
+        tableView.register(UINib(nibName: CatCell.asString, bundle: nil), forCellReuseIdentifier: CatCell.asString)
     }
     
     @IBAction func sortSegmentPressed(_ sender: UISegmentedControl) {
-        
+        let selectedSortionMethod = Sortion.allCases[sender.selectedSegmentIndex]
+        viewModel.setSortion(to: selectedSortionMethod)
+        tableView.reloadData()
     }
-    
     
 }
 
@@ -31,10 +38,21 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.pets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let pet = viewModel.pets[indexPath.row]
+        var petCell: PetListable
+        switch pet.petType {
+        case .bird:
+            petCell = tableView.dequeueReusableCell(withIdentifier: BirdCell.asString, for: indexPath) as! BirdCell
+        case .dog:
+            petCell = tableView.dequeueReusableCell(withIdentifier: DogCell.asString, for: indexPath) as! DogCell
+        case .cat:
+            petCell = tableView.dequeueReusableCell(withIdentifier: CatCell.asString, for: indexPath) as! CatCell
+        }
+        petCell.setupWithPet(pet)
+        return petCell
     }
 }
